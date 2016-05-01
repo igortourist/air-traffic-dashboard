@@ -1,0 +1,2 @@
+faye_uri: http://127.0.0.1:9292/faye
+faye_uri_js: http://127.0.0.1:9292/faye.js

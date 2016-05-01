@@ -1,0 +1,13 @@
+@import "variables";
+
+@for $i from 1 through 7 {
+
+  .gly-rotate-#{$i*$g-rotate-step} {
+    -webkit-transform: rotate(#{$i*$g-rotate-step}deg);
+    -moz-transform: rotate(#{$i*$g-rotate-step}deg);
+    -ms-transform: rotate(#{$i*$g-rotate-step}deg);
+    -o-transform: rotate(#{$i*$g-rotate-step}deg);
+    transform: rotate(#{$i*$g-rotate-step}deg);
+  }
+
+}

@@ -1,0 +1,11 @@
+== README
+
+Steps are necessary to get the application up and running.
+
+* bundle install
+* rake db:migrate
+* rake db:seed
+* rails s
+* redis-server
+* QUEUE=* rake resque:work
+* bundle exec thin start -R faye.ru -p 9292 -e production

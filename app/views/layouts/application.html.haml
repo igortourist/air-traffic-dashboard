@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Dashboard
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag Rails.application.config.dashboard.faye_uri_js
+    = csrf_meta_tags
+  %body
+    = render 'shared/header'
+    .container
+      = render 'shared/flash_messages'
+      = yield

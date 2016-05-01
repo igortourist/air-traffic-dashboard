@@ -1,0 +1,27 @@
+.row
+  .col-md-8.col-md-offset-2
+    .planes
+      %p.lead
+        Planes
+      .table-responsive
+        %table.table.table-hover
+          %thead
+            %tr.active
+              %th #
+              %th Model
+              %th Flight status
+              %th Flight controls
+          %tbody
+            - @planes.each do |plane|
+              %tr.plane{data: {id: "#{plane.id}"}}
+                %td
+                  = plane.id
+                %td
+                  = link_to plane.model, activities_path(plane.id)
+                %td.status
+                  = plane.status
+                %td
+                  = button_tag type: :button, disabled: !plane.pending?, class: 'btn btn-success takeoff', data: {status: 'takeoff'} do
+                    %i.glyphicon.glyphicon-plane.gly-rotate-45
+                  = button_tag type: :button, disabled: !plane.flight?, class: 'btn btn-warning landing', data: {status: 'landing'} do
+                    %i.glyphicon.glyphicon-plane.gly-rotate-135

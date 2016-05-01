@@ -1,0 +1,20 @@
+.row
+  .col-md-8.col-md-offset-2
+    .activities
+      %p.lead
+        Activities of #
+        = @plane.id
+        = @plane.model
+      .table-responsive
+        %table.table.table-hover
+          %thead
+            %tr.active
+              %th Flight status
+              %th Happened at
+          %tbody
+            - @activities.each do |activity|
+              %tr
+                %td
+                  = activity.status
+                %td
+                  = activity.created_at

@@ -1,0 +1,22 @@
+.row
+  .col-md-8.col-md-offset-2
+
+    %h2
+      Sign in
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label :username
+        = f.text_field :username, autofocus: true, class: 'form-control', placeholder: 'Username'
+      
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: 'form-control', placeholder: 'Password'
+      
+      - if devise_mapping.rememberable?
+        .checkbox.pull-right
+          %label
+            = f.check_box :remember_me
+            Remember me
+
+      = f.submit "Sign in", class: 'btn btn-primary'
